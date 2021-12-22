@@ -12,7 +12,7 @@ namespace Wetterdaten_JaegerMaximilian
 
         static double MonthAverage(int month, int col)
         {
-            string relativeFilePath = @"wetterdaten.csv";
+            string relativeFilePath = @"..\..\..\Wetterdaten.csv";
             using (StreamReader sr = new StreamReader(relativeFilePath))
             {
 
@@ -56,6 +56,7 @@ namespace Wetterdaten_JaegerMaximilian
                 Console.WriteLine($"Month: {i}: Average Temp. {Math.Round(MonthAverage(i, 2), 2)} °C || " +
                     $"Average Sun Hours {Math.Round(MonthAverage(i, 11)/60, 2)} h");
                 i++;
+                Console.ReadLine();
             }
             
 
