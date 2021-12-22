@@ -50,13 +50,14 @@ namespace Wetterdaten_JaegerMaximilian
 
             
             int i = 1;
-            while (i <= 12)
+            while (i <= 12) //muss natürlich jetzt 24 mal die CSV Tabelle durchgehen anstatt 1x alles
             {
                 Console.WriteLine($"Month: {i}: Average Temp. {Math.Round(MonthAverage(i, 2), 2)} °C || " +
                     $"Average Sun Hours {Math.Round(MonthAverage(i, 11)/60, 2)} h");
                 i++;
                 
             }
+            Console.ReadLine();
             
 
         }
