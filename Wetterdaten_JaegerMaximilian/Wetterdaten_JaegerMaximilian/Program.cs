@@ -33,14 +33,14 @@ namespace Wetterdaten_JaegerMaximilian
                     {
                         double DoubleValue;
                      
-                        double.TryParse(Line[3], out DoubleValue);
+                        double.TryParse(Line[SearchCol].Replace(".", ","), out DoubleValue);
                         ValueSum += DoubleValue;
                         ValuePointsCounter++;
                     }
                     
 
                 }
-                Console.WriteLine(ValueSum);
+                //Console.WriteLine(ValueSum);
                 if (ValueSum == 0) return 0;
                 else return ValueSum / ValuePointsCounter;
             }
@@ -48,15 +48,14 @@ namespace Wetterdaten_JaegerMaximilian
         static void Main(string[] args)
         {
 
-            //I have to find out why average temp in July for example is so low!!!
-            double a = MonthAverage(7, 2);
-            int i = 13;
+            
+            int i = 1;
             while (i <= 12)
             {
                 Console.WriteLine($"Month: {i}: Average Temp. {Math.Round(MonthAverage(i, 2), 2)} °C || " +
                     $"Average Sun Hours {Math.Round(MonthAverage(i, 11)/60, 2)} h");
                 i++;
-                Console.ReadLine();
+                
             }
             
 
